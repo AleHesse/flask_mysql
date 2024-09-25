@@ -1,0 +1,61 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+<div class="container_def">
+
+    <div class="">
+        <div class="collapse" id="collapseExample">
+            <iframe src="funcioários.html" style="border:none;" name="iframe_a" width="100%" height="150px""
+                title=" Iframe Example"></iframe>
+        </div>
+    </div>
+
+    <div class="alert alert-dark  ">
+        <h4 class="text-center">Funcionários</h4>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <tr>
+
+                <th><a href="/funcionarios/employeeNumber  " class="">RF</a></th>
+                <th><a href="/funcionarios/firstName " class="">Nome</a></th>
+                <th>Ramal</th>
+                <th>Email</th>
+                <th><a href="/funcionarios/officeCode  " class="">Filial</a></th>
+                <th>Relatórios</th>
+                <th>Cargo</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+            {% for func in funcionarios %}
+            <tr>
+                <td>{{ func[0] }}</td>
+                <td>{{ func[2] }} {{ func[1] }}</td>
+                <td>{{ func[3] }}</td>
+                <td>{{ func[4] }}</td>
+                <td>{{ func[5] }}</td>
+                <td>{{ func[6] }}</td>
+                <td>{{ func[7] }}</td>
+
+                <td align="center">
+                    <a class="btn badge-danger btn-sm" href="/del_func/{{ func[0] }}" target="top">
+                        Excluir
+                    </a>
+                </td>
+                <td align="center">
+                    <a href="/edit_func/{{ func[0] }}" class="btn badge-info btn-sm">
+                        Editar
+                    </a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

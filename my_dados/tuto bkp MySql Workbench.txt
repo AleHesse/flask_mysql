@@ -1,0 +1,21 @@
+video aula: https://www.youtube.com/watch?v=RkLB0aQh5Es
+
+Tutorial Backup MySql Workbench:
+
+Abrir o Workbench
+
+### Exportando: ####
+
+> Server > Data Export ou Administration > Data Export
+> Selecionar o DataBase (Clicando em cima)
+> Marcar Export to Self-Contained File e Include Create Schema
+> Escolher local salvar...
+> Start Export
+
+### Importar: ###
+
+> Server Data Import 
+> Marcar Import From Self-Conteined File
+> Selecionar o arquivo
+> Import Progress (aba abaixo Data Export)
+> Start Import

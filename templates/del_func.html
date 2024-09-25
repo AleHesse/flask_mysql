@@ -1,0 +1,26 @@
+{% extends 'default.html' %}
+
+{%block conteudo %}
+<div class="pedido">
+    <div class="alert alert-dark" role="alert">
+        <h4>Excluir Funcionário</h4>
+    </div>
+
+    <div class="col col-lg-9" style="text-align: left;">
+
+        <h5>Tem certeza que deseja excluir ? {{ funcionario[2] }} {{ funcionario[1] }}</h5>
+
+    </div>
+    <div class="col col-lg-3" style="text-align: right;">
+        <form action="/del_func/{{ funcionario[0] }}" method="post">
+            <input type="submit" value="CONFIRMAR" class="btn badge-info btn-sm">
+            <a href="/funcionarios/employeeNumber" class="btn badge-danger btn-sm" target="top">CANCELAR</a>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

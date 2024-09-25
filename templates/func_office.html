@@ -1,0 +1,39 @@
+{% extends 'myiframe.html' %}
+
+{% block conteudo %}
+<div class="container_def">
+    <div class="alert alert-dark ">
+        <h5 class="text-center">Funcionários</h5>
+    </div>
+    <div>
+        <table class="table table-dark">
+            <tr>
+                
+                <th>RF</th>
+                <th>Nome</th>          
+                <th>Ramal</th>
+                <th>Email</th>
+                
+                <th>Cargo</th>
+    
+            </tr>
+            {% for func in funcionarios %}
+            <tr>
+                <td>{{ func[0] }}</td>
+                <td>{{ func[2] }} {{ func[1] }}</td>
+                <td>{{ func[3] }}</td>
+                <td>{{ func[4] }}</td>
+                
+                
+                <td>{{ func[7] }}</td>
+    
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+</div>
+
+
+
+{% endblock %}

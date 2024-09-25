@@ -1,0 +1,43 @@
+{% extends 'myiframe.html' %}
+
+{% block conteudo %}
+<div class="alert alert-dark" role="alert">
+    <h4 class="text-center">Detalhes Pedidos</h4>
+
+    <table class="table table-striped table-dark">
+        <tr>
+            <th>Cod.Prod</th>
+            <th>Nome Produto</th>
+            <th>Qt</th>
+            <th style="text-align: right;">Preço</th>
+            <th style="text-align: right;">Sub-Total</th>
+        </tr>
+        {% for dpedido in detPedido %}
+        <tr>
+            <!--<td><a href="/cliprodutos/{{ dpedido[0] }}" target="_blank">{{ dpedido[0] }}</a></td>-->
+            <td>{{ dpedido[0] }}</td>
+            <td>{{ dpedido[1] }}</td>
+            <td>{{ dpedido[2] }}</td>
+            <td style="text-align: right;">{{ dpedido[3] }}</td>
+            <td style="text-align: right;">{{ dpedido[4] }}</td>
+        </tr>
+        {% endfor %}
+        {% block total_pedido %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td><button class="badge badge-danger" onclick="window.print()">Imprimir</button></td>
+            <th style="text-align: right;">
+                <h5>Total</h5>
+            </th>
+            <td style="text-align: right;">
+                <ht>
+                    <h5>{{ total_pedido }}</h5>
+                </ht>
+            </td>
+        </tr>
+        {% endblock %}
+    </table>
+</div>
+
+{% endblock %}

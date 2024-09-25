@@ -1,0 +1,67 @@
+Nome da Tabela: clientes
+   Coluna: customerNumber - Tipo: int - Nulo: NÃO
+   Coluna: customerName - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: contactLastName - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: contactFirstName - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: phone - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: addressLine1 - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: addressLine2 - Tipo: varchar(50) - Nulo: SIM
+   Coluna: city - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: state - Tipo: varchar(50) - Nulo: SIM
+   Coluna: postalCode - Tipo: varchar(15) - Nulo: SIM
+   Coluna: country - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: salesRepEmployeeNumber - Tipo: int - Nulo: SIM
+   Coluna: creditLimit - Tipo: decimal(10,2) - Nulo: SIM
+Nome da Tabela: detalhespedido
+   Coluna: orderNumber - Tipo: int - Nulo: NÃO
+   Coluna: productCode - Tipo: varchar(15) - Nulo: NÃO
+   Coluna: quantityOrdered - Tipo: int - Nulo: NÃO
+   Coluna: priceEach - Tipo: decimal(10,2) - Nulo: NÃO
+   Coluna: orderLineNumber - Tipo: smallint - Nulo: NÃO
+Nome da Tabela: escritorios
+   Coluna: officeCode - Tipo: varchar(10) - Nulo: NÃO
+   Coluna: city - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: phone - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: addressLine1 - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: addressLine2 - Tipo: varchar(50) - Nulo: SIM
+   Coluna: state - Tipo: varchar(50) - Nulo: SIM
+   Coluna: country - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: postalCode - Tipo: varchar(15) - Nulo: NÃO
+   Coluna: territory - Tipo: varchar(10) - Nulo: NÃO
+Nome da Tabela: funcionarios
+   Coluna: employeeNumber - Tipo: int - Nulo: NÃO
+   Coluna: lastName - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: firstName - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: extension - Tipo: varchar(10) - Nulo: NÃO
+   Coluna: email - Tipo: varchar(100) - Nulo: NÃO
+   Coluna: officeCode - Tipo: varchar(10) - Nulo: NÃO
+   Coluna: reportsTo - Tipo: int - Nulo: SIM
+   Coluna: jobTitle - Tipo: varchar(50) - Nulo: NÃO
+Nome da Tabela: linhadeprodutos
+   Coluna: productLine - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: textDescription - Tipo: varchar(4000) - Nulo: SIM
+   Coluna: htmlDescription - Tipo: mediumtext - Nulo: SIM
+   Coluna: image - Tipo: mediumblob - Nulo: SIM
+Nome da Tabela: pagamentos
+   Coluna: customerNumber - Tipo: int - Nulo: NÃO
+   Coluna: checkNumber - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: paymentDate - Tipo: date - Nulo: NÃO
+   Coluna: amount - Tipo: decimal(10,2) - Nulo: NÃO
+Nome da Tabela: pedidos
+   Coluna: orderNumber - Tipo: int - Nulo: NÃO
+   Coluna: orderDate - Tipo: date - Nulo: NÃO
+   Coluna: requiredDate - Tipo: date - Nulo: NÃO
+   Coluna: shippedDate - Tipo: date - Nulo: SIM
+   Coluna: status - Tipo: varchar(15) - Nulo: NÃO
+   Coluna: comments - Tipo: text - Nulo: SIM
+   Coluna: customerNumber - Tipo: int - Nulo: NÃO
+Nome da Tabela: produtos
+   Coluna: productCode - Tipo: varchar(15) - Nulo: NÃO
+   Coluna: productName - Tipo: varchar(70) - Nulo: NÃO
+   Coluna: productLine - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: productScale - Tipo: varchar(10) - Nulo: NÃO
+   Coluna: productVendor - Tipo: varchar(50) - Nulo: NÃO
+   Coluna: productDescription - Tipo: text - Nulo: NÃO
+   Coluna: quantityInStock - Tipo: smallint - Nulo: NÃO
+   Coluna: buyPrice - Tipo: decimal(10,2) - Nulo: NÃO
+   Coluna: MSRP - Tipo: decimal(10,2) - Nulo: NÃO

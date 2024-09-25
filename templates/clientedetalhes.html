@@ -1,0 +1,118 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+
+<div class="col-lg-4">
+    <div class="alert alert-dark" role="alert">
+        <h4 class="text-center">Cliente</h4>
+    </div>
+    <table class="table table-hover">
+
+        <tr>
+            <th scope="col col-lg-2">ID</th>
+            <td>{{ clientes[0] }}</td>
+        </tr>
+        <tr>
+            <th>Nome</th>
+            <td>{{ clientes[1] }}</td>
+        </tr>
+        <tr>
+            <th>Contato</th>
+            <td>{{ clientes[3] }} {{ clientes[2] }}</td>
+        </tr>
+        <tr>
+            <th>Fone</th>
+            <td>{{ clientes[4] }}</td>
+        </tr>
+        <tr>
+            <th>Endereço 1</th>
+            <td>{{ clientes[5] }}</td>
+        </tr>
+        <tr>
+            <th>Endereço 2</th>
+            <td>{{ clientes[6] }}</td>
+        </tr>
+        <tr>
+            <th>Cidade</th>
+            <td>{{ clientes[7] }}</td>
+        </tr>
+        <tr>
+            <th>UF</th>
+            <td>{{ clientes[8] }}</td>
+        </tr>
+        <tr>
+            <th>CEP</th>
+            <td>{{ clientes[9] }}</td>
+        </tr>
+        <tr>
+            <th>Pais</th>
+            <td>{{ clientes[10] }}</td>
+        </tr>
+        <tr>
+            <th>Vendedor</th>
+            <td>{{ clientes[11] }}</td>
+        </tr>
+        <tr>
+            <th>Limt.Cred</th>
+            <td>{{ clientes[12] }}</td>
+        </tr>
+        <tr>
+            <th> <a href="/clientes/customerNumber" class="btn badge-danger">
+                    <h5>voltar</h5>
+                </a></th>
+
+        </tr>
+
+    </table>
+</div>
+
+<!--Inicio tabela pedidos-->
+
+<div class="col col-lg-8 ">
+
+<!--iframe tabela detalhe pedidos-->
+    <div class="">
+        <div class="collapse" id="collapseExample">
+            <iframe src="detalhespedido.html" style="border:none;" name="iframe_a" width="100%" height="300px"
+            title="Iframe Example"></iframe>
+        </div>
+    </div>
+
+
+    <div class="alert alert-dark" role="alert">
+        <h4 class="text-center">Pedidos</h4>
+    </div>
+    <div class="tabelaCliente">
+        <table class="table table-hover">
+            <tr>
+                <th class="col col-lg-1">Cod.</th>
+                <th class="col col-lg-2">Data Pedido</th>
+                <th class="col col-lg-2">Data Envio</th>
+                <th>Status</th>
+                <th>Comentários</th>
+                <th></th>
+            </tr>
+        {% for pedido in pedidos %}
+            <tr>
+                <td>{{ pedido[0] }}</td>
+                <td>{{ pedido[1] }}</td>
+                <td>{{ pedido[3] }}</td>
+                <td>{{ pedido[4] }}</td>
+                <td>{{ pedido[5] }}</td>
+                <td align="center">
+                <button class="badge badge-danger" type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <a class="btn badge-danger" href="/detalhespedido/{{ pedido[0] }}" target="iframe_a">
+                        +
+                    </a>
+                </button>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    
+
+</div>
+
+{% endblock %}

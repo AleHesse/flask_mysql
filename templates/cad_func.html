@@ -1,0 +1,69 @@
+{% extends 'default.html' %}
+
+{%block conteudo %}
+
+<div class="alert alert-dark" role="alert">
+  <h4>Cadastrar Funcionário</h4>
+</div>
+<form action="/cad_func" method="post">
+
+  <table class="table table-striped ">
+
+    <tr>
+      <th><label for="firstName">Nome:</label></th>
+      <td><input type="text" id="firstName" name="firstName" maxlength="50" required></td>
+    </tr>
+    <tr>
+      <th><label for="lastName">Sobrenome:</label></th>
+      <td><input type="text" id="lastName" name="lastName" maxlength="50" required></td>
+    </tr>
+    <tr>
+      <th><label for="extension">Ramal:</label></th>
+      <td><input type="text" id="extension" name="extension" maxlength="10" required></td>
+    </tr>
+    <tr>
+      <th><label for="email">E-mail:</label></th>
+      <td><input type="email" id="email" name="email" maxlength="100" required></td>
+    </tr>
+    <tr>
+      <th><label for="officeCode">Filial:</label></th>
+      <td>
+
+        <div class="form-group">
+          <select name="officeCode" required>
+            {% for results in results %}
+            <option value="{{ results[0]}}">{{ results[1]}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th><label for="jobTitle">Cargos:</label></th>
+      <td>
+
+        <div class="form-group">
+          <select name="jobTitle" required>
+            {% for allcargos in allcargos %}
+            <option value="{{ allcargos[0]}}">{{ allcargos[0]}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td> <input type="submit" value="Cadastrar"></td>
+    </tr>
+    </tr>
+
+  </table>
+
+
+</form>
+
+
+{% endblock%}

@@ -1,0 +1,60 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+<div class="container_def">
+
+
+    <form action="/edit_func/{{ funcionario[0] }}" method="post">
+
+        <div class="alert alert-dark" role="alert">
+            <h4>Editar Funcionário</h4>
+        </div>
+        <table class="table table-striped ">
+            <tr>
+                <th><label for="firstName">Nome:</label></th>
+                <td><input type="text" id="firstName" name="firstName" value="{{ funcionario[2] }}" required>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="lastName">Sobrenome:</label></th>
+                <td><input type="text" id="lastName" name="lastName" value="{{ funcionario[1] }}" required></td>
+            </tr>
+            <tr>
+                <th><label for="extension">Ramal:</label></th>
+                <td><input type="text" id="extension" name="extension" value="{{ funcionario[3] }}" required>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="email">E-mail:</label></th>
+                <td><input type="email" id="email" name="email" value="{{ funcionario[4] }}" required></td>
+            </tr>
+            <tr>
+                <th><label for="officeCode">Filial:</label></th>
+                <td> <input type="text" id="officeCode" name="officeCode" value="{{ funcionario[5] }}" required>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="reportsTo">Reportar:</label></th>
+                <td> <input type="number" id="reportsTo" name="reportsTo" value="{{ funcionario[6] }}" required>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="jobTitle">Cargo:</label></th>
+                <td> <input type="text" id="jobTitle" name="jobTitle" value="{{ funcionario[7] }}" required></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td> <input type="submit" value="Editar"></td>
+            </tr>
+            </tr>
+
+        </table>
+    </form>
+
+
+</div>
+
+
+
+
+{% endblock %}

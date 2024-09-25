@@ -1,0 +1,37 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+<div class="container_def">
+    <div class="alert alert-dark" role="alert">
+        <h4>Últimas Alterações</h4>
+    </div>
+    <div >
+        <table class="table table-striped">
+            <tr>
+        
+                <th>Cliente</th>
+                <th>Contato</th>
+                <!--contactLastName e contactFirstName aninhados de forma inversa para padrão BR nome e sobrenome-->
+                <th>Fone</th>
+                <th>Limt.Cred</th>
+        
+            </tr>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente[0] }}</td>
+                <td>{{ cliente[2] }} {{ cliente[1] }}</td>
+                <td>{{ cliente[3] }}</td>
+                <td>{{ cliente[4] }}</td>
+        
+        
+            </tr>
+            {% endfor %}
+        </table>
+    
+    </div>
+
+</div>
+
+
+
+{% endblock %}

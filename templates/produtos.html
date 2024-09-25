@@ -1,0 +1,43 @@
+{%extends 'default.html'%}
+
+{% block conteudo %}
+<div class="container_def">
+    <div class="alert alert-dark " role="alert">
+        <h4 class="text-center">Produtos</h4>
+
+        <table class="table table-striped table-dark">
+            <tr>
+                <th>Cod.Produto</th>
+                <th>Nome</th>
+                <th>Linha</th>
+                <th>Escala</th>
+                <th>Vendedor</th>
+
+                <th>Estoque</th>
+                <th>Preço</th>
+                <th>MSRP</th>
+                <th>Descrição</th>
+            </tr>
+
+            {% for produto in produtos %}
+            <tr>
+                <td>{{ produto[0] }}</td>
+                <td>{{ produto[1] }}</td>
+                <td>{{ produto[2] }}</td>
+                <td>{{ produto[3] }}</td>
+                <td>{{ produto[4] }}</td>
+
+                <td>{{ produto[6] }}</td>
+                <td>{{ produto[7] }}</td>
+                <td>{{ produto[8] }}</td>
+                <td>{{ produto[5] }}</td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
