@@ -58,6 +58,7 @@ def clientes(orderby):
         # Conecte ao banco de dados MySQL
         conn = mysql.connector.connect(**db_config)
 
+
         cursor = conn.cursor()
         # Certifique-se de validar 'orderby' para evitar injeção de SQL!        
         valid_columns = ["customerNumber", "customerName"]#validando somente as colunas permitidas
@@ -408,8 +409,6 @@ def pagamentos():
 
     aviso = f'  Em construção...'
     return render_template("pagamentos.html", aviso=aviso)
-
-
 
 @app.route("/linhadeprodutos")
 def linhadeprodutos():
