@@ -3,7 +3,6 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 import mysql.connector
 import secure as sc
 
-
 app = Flask(__name__)
 
 # Certifica de que os templates sejam recarregados automaticamente
