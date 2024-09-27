@@ -20,7 +20,11 @@ db_config = {
 
 #inicio index..............................................................
 @app.route("/")
-def index():
+def login():
+    return render_template("login.html")
+
+@app.route("/ultimas_alteracoes")
+def ultimas_alteracoes():
    
     try:
         
@@ -45,7 +49,7 @@ def index():
         conn.close()
 
         # Renderize o template HTML com os dados dos clientes
-        return render_template("index.html", clientes=clientes)
+        return render_template("ultimas_alteracoes.html", clientes=clientes)
 
     except mysql.connector.Error as err:
         print(f"Erro ao conectar ao MySQL: {err}")
@@ -383,7 +387,6 @@ def del_func(employeeNumber):
         conn.close()
         print(funcionario)
         
-
         # Verifica se o usuário existe
         if not funcionario:
             flash("Usuário não encontrado.")
