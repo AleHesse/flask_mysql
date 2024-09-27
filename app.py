@@ -3,7 +3,6 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 import mysql.connector
 import secure as sc
 
-
 app = Flask(__name__)
 
 # Certifica de que os templates sejam recarregados automaticamente
@@ -20,7 +19,11 @@ db_config = {
 
 #inicio index..............................................................
 @app.route("/")
-def index():
+def login():
+    return render_template("login.html")
+
+@app.route("/ultimas_alteracoes")
+def ultimas_alteracoes():
    
     try:
         
@@ -45,7 +48,7 @@ def index():
         conn.close()
 
         # Renderize o template HTML com os dados dos clientes
-        return render_template("index.html", clientes=clientes)
+        return render_template("ultimas_alteracoes.html", clientes=clientes)
 
     except mysql.connector.Error as err:
         print(f"Erro ao conectar ao MySQL: {err}")
@@ -57,6 +60,7 @@ def clientes(orderby):
     try:
         # Conecte ao banco de dados MySQL
         conn = mysql.connector.connect(**db_config)
+
 
         cursor = conn.cursor()
         # Certifique-se de validar 'orderby' para evitar injeção de SQL!        
@@ -382,7 +386,6 @@ def del_func(employeeNumber):
         conn.close()
         print(funcionario)
         
-
         # Verifica se o usuário existe
         if not funcionario:
             flash("Usuário não encontrado.")
@@ -408,8 +411,6 @@ def pagamentos():
 
     aviso = f'  Em construção...'
     return render_template("pagamentos.html", aviso=aviso)
-
-
 
 @app.route("/linhadeprodutos")
 def linhadeprodutos():
